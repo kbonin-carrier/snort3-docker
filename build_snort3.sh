@@ -1,7 +1,7 @@
 #!/bin/bash
 apt-get update && \
   apt-get -y install cmake wget git bison flex g++ libssl-dev pkg-config autoconf \
-  libtool libboost-all-dev liblzma-dev vim
+  libtool libboost-all-dev liblzma-dev vim iproute2 iputils-ping
 
 wget https://www.tcpdump.org/release/libpcap-1.9.1.tar.gz && \
   tar zxvf libpcap-1.9.1.tar.gz && \
