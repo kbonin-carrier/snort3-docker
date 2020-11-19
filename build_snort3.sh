@@ -42,6 +42,12 @@ mkdir kunpengcomputer-hyperscan && cd kunpengcomputer-hyperscan && \
   cmake --build . && cmake -P cmake_install.cmake && \
   cd ../..
 
+wget https://github.com/google/flatbuffers/archive/v1.12.0.tar.gz -O flatbuffers-v1.12.0.tar.gz && \
+  tar zxvf flatbuffers-v1.12.0.tar.gz && mkdir flatbuffers-build && cd flatbuffers-build && \
+  cmake ../flatbuffers-1.12.0 && make && make install && \
+  cd ..
+
+
 ### Install snort3 ###
 git clone https://github.com/snort3/snort3.git && \
   cd snort3 && ./configure_cmake.sh && cd build && \
