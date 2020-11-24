@@ -1,7 +1,7 @@
 #!/bin/bash
 apt-get update && \
   apt-get -y install cmake wget git bison flex g++ libssl-dev pkg-config autoconf \
-  libtool libboost-all-dev liblzma-dev vim iproute2 iputils-ping
+  libtool libboost-all-dev liblzma-dev vim iproute2 iputils-ping libunwind-dev uuid-dev
 
 wget https://www.tcpdump.org/release/libpcap-1.9.1.tar.gz && \
   tar zxvf libpcap-1.9.1.tar.gz && \
@@ -46,6 +46,11 @@ wget https://github.com/google/flatbuffers/archive/v1.12.0.tar.gz -O flatbuffers
   tar zxvf flatbuffers-v1.12.0.tar.gz && mkdir flatbuffers-build && cd flatbuffers-build && \
   cmake ../flatbuffers-1.12.0 && make && make install && \
   cd ..
+
+# install safec
+wget https://github.com/rurban/safeclib/releases/download/v02092020/libsafec-02092020.tar.gz && \
+  tar -xzvf libsafec-02092020.tar.gz && cd libsafec-02092020.0-g6d921f/ && \
+  ./configure && make install && cd ..
 
 
 ### Install snort3 ###
