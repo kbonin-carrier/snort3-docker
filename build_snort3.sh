@@ -55,7 +55,13 @@ wget https://github.com/rurban/safeclib/releases/download/v02092020/libsafec-020
 
 ### Install snort3 ###
 git clone https://github.com/snort3/snort3.git && \
-  cd snort3 && ./configure_cmake.sh && cd build && \
+  cd snort3 && git checkout 3.0.3-3 && ./configure_cmake.sh --prefix=/usr/local && cd build && \
   make -j $(nproc) install && cd ../..
+
+### Install snort3 registered ruleset
+mkdir snortrules-3000 && tar -xvzf ./snortrules-snapshot-3000.tar.gz  -C ./snortrules-3000/ && \
+  cd snortrules-3000/ && cp ./rules/*.rules /usr/local/etc/rules/ && \
+  cp ./builtins/builtins.rules /usr/local/etc/builtin_rules/ && cp ./etc/* /usr/local/etc/snort/ && \
+  cd ..
 
 echo "export PATH=\"/usr/local/snort/bin:$PATH\"" >> /root/.bashrc

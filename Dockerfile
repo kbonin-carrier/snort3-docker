@@ -2,6 +2,7 @@ FROM ubuntu:20.04
 
 RUN mkdir -p /root/snort
 WORKDIR /root/snort/
+COPY ./snortrules-snapshot-3000.tar.gz ./
 COPY ./build_snort3.sh ./
 
 ENV TZ=Asia/Shanghai
