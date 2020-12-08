@@ -60,6 +60,8 @@ git clone https://github.com/snort3/snort3.git && \
 
 ### Install snort3 registered ruleset
 mkdir snortrules-3000 && tar -xvzf ./snortrules-snapshot-3000.tar.gz  -C ./snortrules-3000/ && \
+  mkdir /usr/local/etc/rules && mkdir /usr/local/etc/builtin_rules && \
+  mkdir /usr/local/etc/so_rules && mkdir /usr/local/etc/lists && \
   cd snortrules-3000/ && cp ./rules/*.rules /usr/local/etc/rules/ && \
   cp ./builtins/builtins.rules /usr/local/etc/builtin_rules/ && cp ./etc/* /usr/local/etc/snort/ && \
   cd ..
