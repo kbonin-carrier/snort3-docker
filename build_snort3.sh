@@ -1,7 +1,7 @@
 apt-get update && apt-get install -y build-essential python3 autotools-dev libdumbnet-dev libluajit-5.1-dev libpcap-dev \
 zlib1g-dev pkg-config libhwloc-dev cmake liblzma-dev openssl libssl-dev cpputest libsqlite3-dev \
 libtool uuid-dev git autoconf bison flex libcmocka-dev libnetfilter-queue-dev libunwind-dev \
-libmnl-dev ethtool wget net-tools iputils-ping
+libmnl-dev ethtool wget net-tools iputils-ping vim
 
 wget https://github.com/rurban/safeclib/releases/download/v02092020/libsafec-02092020.tar.gz && \
 tar xzvf libsafec-02092020.tar.gz && \
