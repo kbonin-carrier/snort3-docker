@@ -44,4 +44,15 @@ snort -V
 
            Using LZMA version 5.2.4
 
+Spawn Multiple Snort Instances in Parallel
+
+./run_snort_on_mcores.sh 24 hyperscan
+
+These 24 intances will be run on cores 1~24 all at once, then watch htop to see cores/memory utilization. Once they are winding down, hit any key. The all output will be collected in this directory:
+ 
+cat snort-24-cores-hyperscan-results-02-12-21-19-00/snort-24-cores-hyperscan-results.csv 
+
+After that, you can delete all 24 container instances:
+
+./delete-last-docker.sh 24
 
