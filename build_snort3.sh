@@ -51,9 +51,9 @@ cd ..
 
 sudo ldconfig
 
-wget https://www.snort.org/downloads/snortplus/libdaq-3.0.0.tar.gz && \
-tar xzvf libdaq-3.0.0.tar.gz  && \
-cd libdaq-3.0.0/ && \
+wget https://github.com/snort3/libdaq/archive/refs/tags/v3.0.5.tar.gz && \
+tar xzvf v3.0.5.tar.gz  && \
+cd libdaq-3.0.5/ && \
 ./bootstrap  && \
 ./configure && \
 make  && make install && \
@@ -61,15 +61,15 @@ cd ..
 
 git clone https://github.com/snort3/snort3.git && \
 cd snort3 && \
-git checkout 3.1.1.0 && \
+git checkout 3.1.13.0 && \
 ./configure_cmake.sh --prefix=/usr/local  && \
 cd build/ && \
 make -j && make install && \
 cd ../..
 
 ### Install snort3 registered ruleset
-mkdir snortrules-3000 && cd snortrules-3000 && \
-tar xvzf /root/snort/snort3-rules-3000.tar.gz && \
+mkdir snortrules-31110 && cd snortrules-31110 && \
+tar xvzf /root/snort/snortrules-snapshot-31110.tar.gz && \
 mv /usr/local/etc /usr/local/etc.orig && \
 mkdir /usr/local/etc && \
 cp -r * /usr/local/etc && \
